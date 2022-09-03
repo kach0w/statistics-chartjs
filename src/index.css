@@ -22,11 +22,11 @@ code {
 
 input {
   margin-top: 2vh;
-  background-color: #3b82f6;
-  border: none;
+  /* background-color: #3b82f6; */
+  border: 3px solid rgb(41, 120, 211);
   border-radius: 8px;
-  box-shadow: none !important;
-  color: #fff !important;
+  /* box-shadow: none !important; */
+  color: rgb(0, 0, 0) !important;
   font-family: Google Sans,Roboto,Arial,Helvetica,sans-serif;
   font-size: 15px;
   outline: none !important;
@@ -37,14 +37,14 @@ input {
 
 button {
   margin-top: 2vh;
-  background-color: #3b82f6;
-  border: none;
+  background-color: #ffffff;
+  border: 3px solid rgb(41, 120, 211);
   border-radius: 8px;
-  box-shadow: none !important;
-  color: #fff !important;
+  /* box-shadow: none !important; */
+  color: rgb(0, 0, 0) !important;
   font-family: Google Sans,Roboto,Arial,Helvetica,sans-serif;
   font-size: 15px;
-  outline: none !important;
+  /* outline: none !important; */
   padding-bottom: 10px;
   padding-top: 10px;
   text-align: center;
