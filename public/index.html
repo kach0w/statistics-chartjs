@@ -11,108 +11,40 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="piechart.png" type="image/png" >    
+    <link rel="icon" href="piechart.jpg" type="image/jpg" >    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script
+        type="text/javascript"
+        src="node_modules/chart.js/dist/chart.js"
+    ></script> -->
+    <script src="script.js"></script>
     <title>Statistics</title>
   </head>
   <body>
+    <h1>Statistics with Chart JS</h1>
+
     <div class="input">
       <input type="text" placeholder="Chart Name..." id="chartnameId">
+      <select name="chart_types" id="chart_types">
+        <option value="barchart">Bar Chart</option>
+        <option value="piechart">Pie Chart</option>
+        <option value="linechart">Line Chart</option>
+      </select>
       <input type="text" placeholder="Input Numbers... *" id="inputId">
       <input type="text" placeholder="Column Names..." id="colnameId">
       <button type="button" onclick="myFunction();">Submit</button>
     </div>
 
     <div class="mycanvas">
-      <h1>Statistics with Chart JS</h1>
       <canvas width="1000" height="500" id="myChart"></canvas>
     </div>
     <div class="footer">
       <h3>Made by <a href="https://github.com/kach0w">kach0w</a><h3>
     </div>
     <script>
-      function myFunction(){
-        let chartStatus = Chart.getChart("myChart"); // <canvas> id
-          if (chartStatus != undefined) {
-            chartStatus.destroy();
-          }
-        let input_nums = document.getElementById("inputId").value;
-        let col_names = document.getElementById("colnameId").value;
-        let char_names = document.getElementById("chartnameId").value;
-
-        //console.log(input_text);  
-        //print out input numbers
-
-        const numarr = input_nums.split(' ');
-        //console.log(numarr); 
-        //console.log(col_names)
-
-        let colnamearr = new Array(numarr.length);
-        if(col_names.length === 0){
-          for(var i=0; i<numarr.length; i++){
-            var colnumber = i+1;
-            colnamearr[i] = "Column " + colnumber;
-          }
-        }
-
-        if(char_names.length === 0){
-          char_names = "Bar Chart";
-        } 
-        const colarr = colnamearr;
-        //console.log(colarr); 
-        //actual arr
-
-        makeChart(numarr, colarr, char_names);
-    }
-    
-    
-
-      //function dataFromArray(){}
-    function makeChart(arr, colarr, label){
-        const ctx = document.getElementById('myChart');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: colarr,
-                datasets: [{
-                    label: label,
-                    data: arr,
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-              responsive: false,
-              maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-      }
+      
       
     </script>
 
