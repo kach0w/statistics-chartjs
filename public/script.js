@@ -10,12 +10,19 @@ function myFunction(){
 
     const numarr = input_nums.split(' ');
     let colnamearr = new Array(numarr.length);
-    if(col_names.length === 0){
+    if(col_names.length === 0 && chart_type==="barchart"){
       for(var i=0; i<numarr.length; i++){
         var colnumber = i+1;
         colnamearr[i] = "Column " + colnumber;
       }
     }
+
+    if(col_names.length === 0 && chart_type==="linechart"){
+        for(var i=0; i<numarr.length; i++){
+          var colnumber = i+1;
+          colnamearr[i] = "Point " + colnumber;
+        }
+      }
   
     if(chart_names.length === 0){
         chart_names = "Your " + chart_type;
