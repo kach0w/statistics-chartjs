@@ -15,11 +15,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- <script
-        type="text/javascript"
-        src="node_modules/chart.js/dist/chart.js"
-    ></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="script.js"></script>
+
+    <script type="text/javascript">
+      $(document).on('keypress', function(event){
+        let keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+          myFunction();
+        }
+      })
+    </script>
     <title>Statistics</title>
   </head>
   <body>
