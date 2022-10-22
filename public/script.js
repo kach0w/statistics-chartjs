@@ -9,26 +9,44 @@ function myFunction(){
     let chart_type = document.getElementById("chart_types").value;
 
     const numarr = input_nums.split(' ');
-    let colnamearr = new Array(numarr.length);
+    const colnamearr = col_names.split(' ');
+   
+    //Bar Chart  
     if(col_names.length === 0 && chart_type==="barchart"){
       for(var i=0; i<numarr.length; i++){
         var colnumber = i+1;
         colnamearr[i] = "Column " + colnumber;
       }
     }
+    else if(col_names.length != 0 && chart_type==="barchart"){
+        for(var i=0; i<numarr.length; i++){
+          var colnumber = colnamearr[i].toUpperCase();
+          colnamearr[i] = "Column " + colnumber;
+        }
+    }
 
+    //line chart
     if(col_names.length === 0 && chart_type==="linechart"){
         for(var i=0; i<numarr.length; i++){
           var colnumber = i+1;
           colnamearr[i] = "Point " + colnumber;
         }
-      }
+    }
+    else if(col_names.length != 0 && chart_type==="linechart"){
+        for(var i=0; i<numarr.length; i++){
+          var colnumber = colnamearr[i].toUpperCase();
+          colnamearr[i] = "Point " + colnumber;
+        }
+    }
   
     if(chart_names.length === 0){
         chart_names = "Your " + chart_type;
     } 
+
+    
+
     const colarr = colnamearr;
-    console.log(chart_type);
+    // console.log(chart_type);
     if(chart_type === "barchart"){makeBarChart(numarr, colarr, chart_names);}
     if(chart_type === "piechart"){makePieChart(numarr, colarr, chart_names);}
     if(chart_type === "linechart"){makeLineChart(numarr, colarr, chart_names);}
